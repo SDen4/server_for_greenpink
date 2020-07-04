@@ -30,32 +30,4 @@
 
         return $bouquets;
     };
-    // global $bouquets;
-
-    // в аргумент функции необходимо передать глобальную переменную подключения, т.к. внутри функции ее не видно
-    // $bouquets = getBouquets();
-    // echo json_encode($bouquets, JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK);
-    // echo $bouquets;
-
-    // return json_encode($bouquets, JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK);
-    // echo '<pre>';
-    // print_r($bouquets);
-    // echo '</pre>';
-
-
-
-    // запрос данных
-    // $mysqli->real_query("SELECT * FROM bouquets_list");
-    // $result = $mysqli->use_result();
-
-    // вывод информации из БД
-    // while ($row = $result->fetch_assoc()) {
-    //     echo "id = " . $row['id'] . "\n";
-    //     echo "name = " . $row['name'] . "\n";
-    //     echo "price = " . $row['price'] . "\n";
-    //     echo "description = " . $row['description'] . "\n";
-    // }
-
-    // $num = mysql_num_rows($result);
-    // echo $result;
 ?>
