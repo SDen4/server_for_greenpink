@@ -4,28 +4,28 @@
 ?>
 
 <?php
-    // разрешение для localhost
+    // permission for localhost
     $http_origin = $_SERVER['HTTP_ORIGIN'];
     if ($http_origin == "http://localhost:8082" || $http_origin == "http://localhost/list.php") {header("Access-Control-Allow-Origin: $http_origin");}
 
     // it solve the problem of displaying international characters
     $mysqli->set_charset('utf8');
 
-    // функция получения информации из БД
+    // function to ger information from DB
     function getBouquets() {
 
-        // вместо того, чтобы в аргумент функции передавать переменную подключения, находящуюся в глобальной области видимости
-        // объявляю внутри функции эту глобальную переменную
+        // instead of pushing connecting var to function argument, which is global one
+        // I declare this var as a global inside function
         global $mysqli;
 
-        // выбор запрашиваемой из БД информации: всё
+        // select all information in DB to query
         $sql  = 'SELECT * FROM `bouquets_list`';
 
-        // запрос в БД
+        //query to DB
         $result = mysqli_query($mysqli, $sql);
 
-        // преобразование выводимой информации из БД в массив
-        // MYSQLI_ASSOC - константа необходима для корректного отображения массива
+        // convertation received from DB information to array
+        // MYSQLI_ASSOC - constant for correct displaying of the array
         $bouquets = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         return $bouquets;
